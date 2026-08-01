@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.qumulo.com/rest-api-guide/
+description: >-
+  Versioning and lifecycle posture for the Qumulo Core REST API, captured from
+  the public REST API Guide. Qumulo versions each resource independently in the
+  URI path and marks superseded versions deprecated and new features preview.
+versioning:
+  scheme: uri-path
+  detail: >-
+    Per-resource versioning (v1/v2/v3/v4). Multiple versions of the same
+    resource coexist so integrations can migrate on their own schedule.
+  docs: https://docs.qumulo.com/rest-api-guide/
+deprecation:
+  policy: >-
+    Superseded API versions are explicitly tagged "deprecated" in the REST API
+    Guide while remaining available; newer capabilities are tagged "preview".
+    Example: the Snapshots resource carries v1 (deprecated), v2 (deprecated),
+    v3 (current), and v4 versions simultaneously.
+  docs: https://docs.qumulo.com/rest-api-guide/
+  sunset_header: unknown
+release_cadence:
+  detail: >-
+    API changes ship with Qumulo Core software releases and are tracked in the
+    REST API Guide changelog. See changelog/qumulo-changelog.yml.
+status_page: none
+notes: >-
+  No public multi-tenant status page was found (status.qumulo.com does not
+  resolve); Qumulo clusters are customer-operated and surface health through the
+  cluster's own monitoring API and the care.qumulo.com support portal.

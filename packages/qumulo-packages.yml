@@ -1,0 +1,21 @@
+generated: '2026-07-20'
+method: searched
+source: https://pypi.org/project/qumulo-api/
+description: >-
+  First-party Qumulo client library. The official "Qumulo Core Python SDK"
+  (qumulo-api) is published to PyPI by Qumulo, Inc. (python@qumulo.com) and
+  bundles both the Python bindings for the Qumulo Core REST API and the `qq`
+  command-line utility. Verified against PyPI at fetch time (latest 7.9.1,
+  requires Python 3.8+). No first-party client libraries were found on npm,
+  Maven Central, NuGet, pkg.go.dev, RubyGems, Packagist, or crates.io.
+packages:
+- language: python
+  registry: pypi
+  name: qumulo-api
+  url: https://pypi.org/project/qumulo-api/
+  source: https://github.com/Qumulo
+  install: pip install qumulo-api
+  version: 7.9.1
+  official: true
+  note: >-
+    Qumulo Core Python SDK; also installs the `qq` CLI (see cli/qumulo-cli.yml).

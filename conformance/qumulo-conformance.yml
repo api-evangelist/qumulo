@@ -1,0 +1,40 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.qumulo.com/rest-api-guide/
+description: >-
+  Industry / cross-cutting standards the Qumulo platform conforms to, asserted
+  from the public REST API Guide and administrator documentation. Storage-access
+  protocol conformance is a core Qumulo capability (multi-protocol NAS + S3);
+  API-level web standards are documentation-sourced (no OpenAPI is published).
+standards:
+- id: amazon-s3-api
+  conforms: true
+  evidence: >-
+    Qumulo exposes an Amazon S3-compatible object API (buckets, access keys) as
+    a first-class protocol alongside file protocols.
+- id: nfs
+  conforms: true
+  evidence: NFS export support documented as a native access protocol.
+- id: smb
+  conforms: true
+  evidence: SMB share support documented as a native access protocol.
+- id: ftp
+  conforms: true
+  evidence: FTP access documented as a supported protocol.
+- id: saml-sso
+  conforms: true
+  evidence: SAML single sign-on documented for API/session authentication.
+- id: openid-connect
+  conforms: partial
+  evidence: >-
+    The care.qumulo.com support portal exposes an OpenID Connect discovery
+    document (Salesforce-backed); the cluster REST API itself uses bearer
+    access tokens and session/SAML auth rather than OAuth2/OIDC flows.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Error responses are JSON with cluster codes; problem+json not documented.
+- id: openmetrics
+  conforms: true
+  evidence: >-
+    Qumulo Core exposes an OpenMetrics-compatible metrics API (used by the
+    published Prometheus/Grafana monitoring dashboards).

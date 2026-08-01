@@ -1,7 +1,29 @@
 aid: qumulo
 name: Qumulo
-description: Qumulo is a company surfaced as a portfolio company of dcvc and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Qumulo is an enterprise data platform company that delivers a single, unified
+  file and object storage system spanning on-premises data centers, the edge,
+  and the public cloud (AWS, Azure, GCP) at exabyte scale. Every Qumulo cluster
+  exposes a comprehensive versioned REST API (v1/v2/v3+) and the companion `qq`
+  command-line tool for programmatic administration of files, snapshots, quotas,
+  replication, multi-protocol access (NFS, SMB, S3, FTP), networking, cluster
+  operations, monitoring/analytics, and access control. The platform targets
+  data-intensive workloads such as AI/ML, high-performance computing, media and
+  entertainment, genomics, and enterprise backup, giving organizations a global
+  namespace and real-time analytics across their unstructured data.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.datocms-assets.com/195389/1770871886-share-qumulo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/qumulo/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +33,98 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- Storage
+- File Storage
+- Data Platform
+- Cloud Storage
+- Unstructured Data
+- Enterprise
+- Infrastructure
+- REST API
+- CLI
+apis:
+- name: Qumulo Core REST API
+  description: >-
+    The REST API served by every Qumulo cluster for managing files, snapshots,
+    quotas, replication, multi-protocol shares (NFS/SMB/S3/FTP), networking,
+    cluster lifecycle, monitoring/analytics, and access control. Versioned per
+    resource (v1/v2/v3+) with access-token (bearer), session, and SAML auth.
+  humanURL: https://docs.qumulo.com/rest-api-guide/
+  baseURL: https://{qumulo-cluster}:8000/api
+  properties:
+  - type: APIReference
+    url: https://docs.qumulo.com/rest-api-guide/
+  - type: Authentication
+    url: authentication/qumulo-authentication.yml
+  - type: Conventions
+    url: conventions/qumulo-conventions.yml
+  - type: Lifecycle
+    url: lifecycle/qumulo-lifecycle.yml
+  - type: ChangeLog
+    url: changelog/qumulo-changelog.yml
+  - type: Conformance
+    url: conformance/qumulo-conformance.yml
+common:
+- type: DomainSecurity
+  url: security/qumulo-domain-security.yml
+- type: Website
+  url: https://qumulo.com/
+- type: DeveloperPortal
+  url: https://docs.qumulo.com/
+- type: Documentation
+  url: https://docs.qumulo.com/
+- type: APIReference
+  url: https://docs.qumulo.com/rest-api-guide/
+- type: GettingStarted
+  url: https://docs.qumulo.com/administrator-guide/
+- type: Support
+  url: https://care.qumulo.com/hc/en-us
+- type: Blog
+  url: https://www.qumulo.com/blog
+- type: GitHubOrganization
+  url: https://github.com/Qumulo
+- type: SignUp
+  url: https://www.qumulo.com/try-qumulo
+- type: Pricing
+  url: https://www.qumulo.com/contact
+- type: TermsOfService
+  url: https://www.qumulo.com/terms-hub
+- type: PrivacyPolicy
+  url: https://www.qumulo.com/privacy-policy
+- type: TrustCenter
+  url: https://trust.qumulo.com/
+- type: CLI
+  url: cli/qumulo-cli.yml
+- type: Packages
+  url: packages/qumulo-packages.yml
+- type: SDKs
+  url: packages/qumulo-packages.yml
+- type: Authentication
+  url: authentication/qumulo-authentication.yml
+- type: Conventions
+  url: conventions/qumulo-conventions.yml
+- type: Lifecycle
+  url: lifecycle/qumulo-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/qumulo-lifecycle.yml
+- type: ChangeLog
+  url: changelog/qumulo-changelog.yml
+- type: Conformance
+  url: conformance/qumulo-conformance.yml
+- type: WellKnown
+  url: well-known/qumulo-well-known.yml
+- type: LLMsTxt
+  url: llms/qumulo-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v1

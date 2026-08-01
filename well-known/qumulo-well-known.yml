@@ -1,0 +1,39 @@
+generated: '2026-07-20'
+method: searched
+description: >-
+  Results of probing the /.well-known/ discovery surface for Qumulo hosts.
+  Status is the HTTP code observed at fetch time. Only documents returning a
+  real, correctly-typed payload were saved verbatim. trust.qumulo.com is a
+  Vanta-hosted single-page app that answers 200 with an HTML SPA shell for every
+  /.well-known/ path (including security.txt), so that hit is recorded as
+  present-but-not-a-real-document and NOT saved as a security.txt. The
+  care.qumulo.com support portal is Salesforce-backed and exposes a genuine
+  OpenID Connect discovery document (Salesforce IdP), which was saved.
+hosts:
+- host: https://qumulo.com
+  documents:
+    - path: /.well-known/security.txt
+      status: 404
+    - path: /.well-known/openid-configuration
+      status: 404
+    - path: /.well-known/api-catalog
+      status: 404
+- host: https://docs.qumulo.com
+  documents:
+    - path: /.well-known/security.txt
+      status: 404
+- host: https://care.qumulo.com
+  documents:
+    - path: /.well-known/security.txt
+      status: 401
+    - path: /.well-known/openid-configuration
+      status: 200
+      type: application/json
+      file: qumulo-care-openid-configuration.json
+      note: Salesforce-backed support-portal OIDC discovery (issuer https://care.qumulo.com).
+- host: https://trust.qumulo.com
+  documents:
+    - path: /.well-known/security.txt
+      status: 200
+      type: text/html
+      note: Vanta trust-center SPA shell, not a real RFC 9116 security.txt; not saved.

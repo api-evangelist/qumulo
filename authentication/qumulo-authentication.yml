@@ -1,0 +1,40 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.qumulo.com/rest-api-guide/
+docs: https://docs.qumulo.com/rest-api-guide/
+description: >-
+  Authentication profile for the Qumulo Core REST API, captured from the public
+  REST API Guide (no OpenAPI is published, so this is documentation-sourced, not
+  derived from a spec). Every Qumulo cluster serves its own API; clients
+  authenticate to the cluster to receive a bearer credential.
+summary:
+  types: [http-bearer, session, saml, oauth2-support-portal]
+  api_key_in: []
+  oauth2_flows: []
+schemes:
+- name: SessionLogin
+  type: session
+  mechanism: >-
+    POST credentials to session/login to obtain a session bearer token, which is
+    then sent on subsequent requests. Primary programmatic auth for the qq CLI
+    `login` command.
+  docs: https://docs.qumulo.com/rest-api-guide/
+- name: AccessToken
+  type: http
+  scheme: bearer
+  mechanism: >-
+    Long-lived bearer access tokens created and managed through the
+    auth/access-tokens endpoints (qq auth_create_access_token /
+    auth_modify_access_token). Sent as an Authorization: Bearer header.
+  docs: https://docs.qumulo.com/rest-api-guide/
+- name: SAML
+  type: saml
+  mechanism: >-
+    SAML-based single sign-on via session/start-saml-login and
+    session/retrieve-saml-login (qq sso_login), for SSO-integrated clusters.
+  docs: https://docs.qumulo.com/rest-api-guide/
+notes: >-
+  The care.qumulo.com support portal (separate from the cluster API) is a
+  Salesforce-backed property exposing its own OpenID Connect discovery document
+  (see well-known/qumulo-care-openid-configuration.json); it governs support
+  portal identity, not the Qumulo Core REST API.

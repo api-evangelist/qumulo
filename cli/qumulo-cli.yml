@@ -1,0 +1,50 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.qumulo.com/qq-cli-command-guide/
+description: >-
+  The Qumulo `qq` command-line tool — the developer/administrator surface over
+  the Qumulo Core REST API. It ships inside the official qumulo-api Python SDK
+  (see packages/qumulo-packages.yml). Command groups captured from the public
+  qq CLI Command Guide; the guide enumerates 50+ command families covering the
+  full cluster administration surface.
+docs: https://docs.qumulo.com/qq-cli-command-guide/
+repo: https://github.com/Qumulo/qumulo-api-introduction
+install:
+  pip: pip install qumulo-api
+authentication:
+- {name: login, description: Log in to a Qumulo cluster to obtain session credentials.}
+- {name: sso_login, description: Log in using single sign-on (SAML).}
+- {name: auth_create_access_token, description: Create a long-lived bearer access token for the API.}
+- {name: auth_modify_access_token, description: Enable, disable, or modify an existing access token.}
+command_groups:
+  auth_identity:
+    - {name: auth, description: Roles, privileges, and access-token management.}
+    - {name: ad, description: Active Directory join and configuration.}
+    - {name: ldap, description: LDAP configuration.}
+    - {name: kerberos, description: Kerberos configuration.}
+    - {name: saml, description: SAML single sign-on configuration.}
+  filesystem:
+    - {name: fs, description: File and directory operations, ACLs, attributes, and metadata.}
+  storage_management:
+    - {name: quota, description: Directory quota management.}
+    - {name: snapshot, description: Snapshot create/list/delete and policies.}
+    - {name: replication, description: Continuous and snapshot replication relationships.}
+    - {name: capacity, description: Capacity and usage reporting.}
+  cluster:
+    - {name: cluster, description: Cluster settings and lifecycle.}
+    - {name: nodes, description: Node inventory and status.}
+    - {name: upgrade, description: Cluster software upgrade.}
+  network:
+    - {name: network, description: Network interface and connectivity settings.}
+    - {name: dns, description: DNS configuration.}
+  protocols:
+    - {name: nfs, description: NFS exports and settings.}
+    - {name: smb, description: SMB shares and settings.}
+    - {name: s3, description: S3 API buckets and access keys.}
+    - {name: ftp, description: FTP configuration.}
+  security:
+    - {name: encryption, description: At-rest encryption settings.}
+    - {name: ssl, description: TLS certificate management.}
+  monitoring:
+    - {name: monitoring, description: Cluster monitoring and alerting.}
+    - {name: metrics, description: OpenMetrics / analytics endpoints.}

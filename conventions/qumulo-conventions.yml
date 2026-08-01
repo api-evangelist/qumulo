@@ -1,0 +1,38 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.qumulo.com/rest-api-guide/
+description: >-
+  Cross-cutting request/response semantics for the Qumulo Core REST API,
+  captured from the public REST API Guide. No OpenAPI is published, so field-level
+  details are documentation-sourced. Cross-links: authentication/qumulo-authentication.yml,
+  lifecycle/qumulo-lifecycle.yml, changelog/qumulo-changelog.yml.
+authentication:
+  style: bearer
+  detail: >-
+    Session token or long-lived access token sent as Authorization: Bearer;
+    SAML SSO supported. See authentication/qumulo-authentication.yml.
+versioning:
+  style: uri-path
+  detail: >-
+    Each resource is versioned independently in the path (v1, v2, v3, v4...).
+    Multiple versions coexist; older versions are marked deprecated and newer
+    features may be marked preview. See lifecycle/qumulo-lifecycle.yml.
+base_path:
+  detail: >-
+    Served per-cluster over HTTPS (default management port 8000); there is no
+    single shared public base host — the base URL is the customer's own cluster.
+idempotency:
+  supported: false
+  detail: >-
+    The REST API Guide does not document a dedicated idempotency-key mechanism.
+pagination:
+  detail: >-
+    Large collections (e.g. filesystem listings, audit logs) are paginated;
+    consult the per-endpoint reference in the REST API Guide for cursor/limit
+    parameters.
+error_envelope:
+  detail: >-
+    Errors are returned as JSON with cluster error codes and messages;
+    no RFC 9457 application/problem+json is documented.
+transport:
+  detail: HTTPS only (TLS); management API on port 8000 by default.

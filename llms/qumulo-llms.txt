@@ -1,0 +1,43 @@
+# Qumulo
+
+> Qumulo is an enterprise data platform delivering a single, unified file and
+> object storage system across on-premises, edge, and public cloud (AWS, Azure,
+> GCP) at exabyte scale. Every Qumulo cluster exposes a versioned REST API
+> (v1/v2/v3+) and the `qq` CLI for managing files, snapshots, quotas,
+> replication, multi-protocol access (NFS/SMB/S3/FTP), networking, cluster
+> operations, and monitoring/analytics.
+
+## APIs
+
+- [Qumulo Core REST API Guide](https://docs.qumulo.com/rest-api-guide/): Full REST API reference, versioned per resource.
+- [qq CLI Command Guide](https://docs.qumulo.com/qq-cli-command-guide/): The `qq` command-line surface over the REST API.
+
+## Docs
+
+- [Documentation Portal](https://docs.qumulo.com/): All Qumulo product and API documentation.
+- [Administrator Guide](https://docs.qumulo.com/administrator-guide/): Getting started and cluster administration.
+- [Support / Care Portal](https://care.qumulo.com/hc/en-us): Knowledge base and support.
+- [Trust Center](https://trust.qumulo.com/): Security and compliance posture (Vanta-hosted).
+
+## SDKs and tools
+
+- [qumulo-api (PyPI)](https://pypi.org/project/qumulo-api/): Official Qumulo Core Python SDK; bundles the `qq` CLI. Install: `pip install qumulo-api`.
+- [Qumulo on GitHub](https://github.com/Qumulo): Open-source tools, monitoring dashboards, and API examples.
+
+## Artifacts (API Evangelist)
+
+- [Authentication profile](authentication/qumulo-authentication.yml)
+- [API conventions](conventions/qumulo-conventions.yml)
+- [Lifecycle & versioning](lifecycle/qumulo-lifecycle.yml)
+- [Changelog surface](changelog/qumulo-changelog.yml)
+- [Standards conformance](conformance/qumulo-conformance.yml)
+- [Packages / SDKs](packages/qumulo-packages.yml)
+- [CLI command surface](cli/qumulo-cli.yml)
+- [Well-known discovery](well-known/qumulo-well-known.yml)
+- [Domain security posture](security/qumulo-domain-security.yml)
+
+## Company
+
+- [Website](https://qumulo.com/)
+- [Blog](https://www.qumulo.com/blog)
+- [Try Qumulo](https://www.qumulo.com/try-qumulo)

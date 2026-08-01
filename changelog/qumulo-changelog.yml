@@ -1,0 +1,17 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.qumulo.com/rest-api-guide/
+description: >-
+  The Qumulo Core REST API maintains a changelog within the public REST API
+  Guide that tracks API modifications across releases. Individual dated entries
+  were not captured verbatim (the guide is a live, per-resource tracker rather
+  than a single dated feed); this artifact records the changelog surface and
+  scheme so integrations can watch it.
+scheme: per-resource-versioned
+docs: https://docs.qumulo.com/rest-api-guide/
+detail: >-
+  API changes are delivered with Qumulo Core software releases. New resource
+  versions are added (v1 -> v2 -> v3 -> v4) as capabilities evolve, superseded
+  versions are marked deprecated, and new features are marked preview, all
+  reflected in the REST API Guide's changelog.
+entries: []
